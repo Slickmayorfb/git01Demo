@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joybringers - Events</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="logo" href="#">Joybringers<span>Charity</span></a>
+<button id="burger" aria-label="Menu">Menu</button>
+<nav id="nav"><ul>
+<li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">What We Do</a></li>
+<li><a class="on" href="#">Events</a></li>
+<li class="dd"><button type="button">Get Involved ▾</button><div class="menu"><a href="#">Volunteer</a><a href="#">Donate</a><a href="#">Partner With Us</a></div></li>
+<li><a href="#">Foodbank</a></li><li><a href="#">Contact</a></li>
+</ul></nav></div></header>
+
+<section class="hero"><div class="wrap">
+<span class="tag">What's On</span>
+<h1>Events &amp; Activities</h1>
+<p>From workshops and skills sessions to community celebrations — find out what's happening across Newcastle and the North East and book your free place.</p>
+<a class="btn" href="#upcoming">See Upcoming Events</a>
+</div></section>
+
+<section class="blk" id="upcoming"><div class="wrap">
+<h2>Upcoming Events</h2><p class="sub">Don't miss what's coming up — register your spot today.</p>
+<div class="grid" id="upList"></div>
+</div></section>
+
+<section class="blk alt"><div class="wrap">
+<h2>Past Events</h2><p class="sub">A look back at everything we've organised for our community.</p>
+<div class="grid" id="pastList"></div>
+</div></section>
+
+<!-- Registration Modal -->
+<div id="modal"><div class="panel">
+<button class="x" id="close" aria-label="Close">×</button>
+<h4 style="margin-top:0">Register for Event</h4>
+<div class="info"><b>Date:</b> <span id="mDate"></span><br><b>Time:</b> <span id="mTime"></span><br><b>Venue:</b> <span id="mVenue"></span><br><em id="mBring"></em></div>
+<div id="famBox" class="info hide"><b>We found your previous family members:</b><br>Add them to this registration <button type="button" class="ghost" id="famNo">No thanks</button></div>
+<div id="formArea"><div id="form" class="fg">
+<div><label>First Name *</label><input id="fn"></div>
+<div><label>Last Name *</label><input id="ln"></div>
+<div><label>Email *</label><input id="em" type="email"></div>
+<div><label>Phone Number *</label><input id="ph" type="tel"></div>
+<div><label>Gender *</label><select><option value="">Please Select</option><option>Male</option><option>Female</option></select></div>
+<div><label>How Many Person is attending *</label><select><option value="">Please Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>6+</option></select></div>
+<div><label>Ticket Type *</label><select><option value="">Please Select</option><option>Single - Free</option><option>Family - Free</option><option>£10 - Single (per person)</option><option>£30 - Family (max 5)</option></select></div>
+<div><label>Age Range *</label><select><option value="">Please Select</option><option>0 - 5</option><option>6 - 11</option><option>12 - 17</option><option>18 - 25</option><option>26 &amp; Above</option></select></div>
+<div class="full"><label>Knowledge / Experience Level *</label><select><option value="">Please Select</option><option>Beginner — little or no prior experience</option><option>Intermediate — some experience</option><option>Advanced — confident and experienced</option></select></div>
+<div><label>Any Allergy? *</label><select id="alg"><option value="">Please Select</option><option>No</option><option>Yes</option></select></div>
+<div id="algW" class="hide"><label>Please specify allergy *</label><input></div>
+<div><label>Location *</label><select id="loc"><option value="">Select Area</option><option>Newcastle</option><option>Sunderland</option><option>Gateshead</option><option>Durham</option><option>North Shields</option><option>South Shields</option><option>Middlesbrough</option><option>Stockton</option><option>Other</option></select></div>
+<div id="locW" class="hide"><label>Specify Location</label><input></div>
+<div><label>How did you hear about us? *</label><select><option value="">Please Select</option><option>Facebook</option><option>Instagram</option><option>LinkedIn</option><option>TikTok</option><option>Joybringers Website</option><option>Email</option><option>School / College</option><option>Friend or Family</option><option>Community Organisation</option><option>Flyer / Poster</option><option>Previous Joybringers Event</option></select></div>
+<div><label>Keep me updated about future events? *</label><select><option value="">Please Select</option><option>Yes</option><option>No</option></select></div>
+<div class="full"><hr><h6>People Attending</h6><small style="color:var(--muted)">Enter the name and age range for each additional person. Attendance is tracked individually.</small>
+<div id="people"></div>
+<p><button type="button" class="ghost" data-add="Child">Add Child</button><button type="button" class="ghost" data-add="Adult">Add Adult</button></p><hr>
+<h6>Consent</h6>
+<label class="chk"><input type="checkbox" id="c1"><span><b>I agree</b> to Joybringers collecting and using my personal data to process this registration and send event-related communications, in line with UK data protection law (UK GDPR). *</span></label>
+<label class="chk"><input type="checkbox"><span>I consent to photos or videos being taken at this event for use on Joybringers' website and social media. (Optional)</span></label>
+<button class="btn" id="submit" type="button">Submit Registration</button>
+<div class="ok hide" id="ok">✅ Thank you for registering! Check your email for event details.</div>
+<div id="err" style="color:#c0392b;margin-top:10px"></div>
+</div></div></div>
+</div></div>
+
+<footer><div class="wrap">
+<div class="fcols">
+<div><h5>JOYBRINGERS</h5><p>Helping Young People Believe, Belong, and Become.</p><p>A registered charity empowering children and young people aged 7–25 across Newcastle and the North East through skills, education, and community.</p>
+<div class="soc"><a href="#">fb</a><a href="#">ig</a><a href="#">in</a><a href="#">x</a><a href="#">tt</a></div></div>
+<div><h5>Quick Links</h5><ul><li><a href="#">Home</a></li><li><a href="#">About Us</a></li><li><a href="#">What We Do</a></li><li><a href="#">Events</a></li><li><a href="#">Volunteer</a></li><li><a href="#">Donate</a></li><li><a href="#">Contact</a></li></ul></div>
+<div><h5>Get Involved</h5><ul><li><a href="#">Volunteer With Us</a></li><li><a href="#">Make a Donation</a></li><li><a href="#">Corporate Partnership</a></li><li><a href="#">Join Our Food Bank</a></li><li><a href="#">Upcoming Events</a></li></ul></div>
+<div><h5>Contact Us</h5><ul><li>info@joybringerscharity.org</li><li>0191 603 0219</li><li>The Light Box Q2, Quorum Business Park, Newcastle upon Tyne</li></ul>
+<p><b>JOYBRINGERS LTD</b><br>Company No. 15400265<br>Registered Charity No. 1212606</p></div>
+</div>
+<p style="margin-top:24px;font-size:.85rem">ICO Registered · UKPRN: 10101743 · HMRC Registered Employer · NCVO Member</p>
+<div class="legal"><span>©2026 Joybringers Ltd. All Rights Reserved. Registered in England &amp; Wales.</span>
+<span><a href="#">Terms of Use</a> · <a href="#">Privacy Policy</a> · <a href="#">Cookies</a> · <a href="#">Cookie Settings</a></span></div>
+</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
